@@ -168,6 +168,11 @@ var COMMODITIES = [
         "name"   : "Oats",
         "country": "US",
         "id"     : "959199"
+    },
+    {
+        "name"   : "status(SNT)",
+        "country": "US",
+        "id"     : "1037047"
     }
 ];
 
