@@ -246,7 +246,7 @@ def main():
 
     coinsdats = sharetool.moneyMsg()
 
-    out = '市值排名,名称,符号,价格USD,精确市值,缩略市值,24小时成交量,24小时量缩写,交易份额,价格BTC,1天(%),7天\n'
+    out = '市值排名,名称,符号,价格USD,精确市值USD,缩略市值,24小时成交量USD,24小时量缩写,交易份额,价格BTC,1天(%),7天\n'
     for d in coinsdats:
         tmpstr = ''
         for t in d:
