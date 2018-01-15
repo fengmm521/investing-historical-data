@@ -9,6 +9,8 @@ import hashlib
 import datetime
 import json
 
+import timetool
+
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
@@ -253,7 +255,11 @@ def main():
 
     out = out[:-1]
 
-    f = open('coins.csv','w')
+    todaypth = timetool.getNowTime()
+    if not os.path.exists('out'):
+        os.mkdir('out')
+    csvpth =  'out/' + todaypth + '.csv'
+    f = open(csvpth,'w')
     f.write(out)
     f.close()
 

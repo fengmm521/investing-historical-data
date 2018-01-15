@@ -57,6 +57,8 @@ def getDateDay():
     sendmsg = str(loctim.tm_year) + '_' + str(loctim.tm_mon) + '_' +  str(loctim.tm_mday)
     return sendmsg
 
+
+
 #日期转为时间戳
 def getDateStructWithSec(t):
     tmp = time.localtime(int(t))
@@ -102,6 +104,28 @@ def conventDayStrSub_(pday,pjoin = '_'):
     d = str(int(ymds[2]))
     out = y + pjoin + m + pjoin + d
     return out
+
+def getNowTime():
+    loctim = time.localtime()
+    #time.struct_time(tm_year=2015, tm_mon=8, tm_mday=2, tm_hour=12, tm_min=16, tm_sec=47, tm_wday=6, tm_yday=214, tm_isdst=0)
+    y = str(loctim.tm_year)
+    m = str(loctim.tm_mon)
+    if len(m) == 1:
+        m = '0' + m
+    d = str(loctim.tm_mday)
+    if len(d) == 1:
+        d = '0' + d
+    h = str(loctim.tm_hour)
+    if len(h) == 1:
+        h = '0' + h
+    mm = str(loctim.tm_min)
+    if len(mm) == 1:
+        mm = '0' + mm
+    s = str(loctim.tm_sec)
+    if len(s) == 1:
+        s = '0' + s
+    sendmsg = y + '_' + m + '_' + d + '_' + h + mm + s
+    return sendmsg
 
 #获取从某一天一直到今天的所有以天计算日期,年_月_日
 def getDateDaysFromOneDate(startDate):
